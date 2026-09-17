@@ -140,9 +140,11 @@ function App() {
         </div>
         <nav>
           <button className="active">Generador</button>
+          {/*
           <button disabled>
             Pruebas Estadísticas <small>Pronto</small>
           </button>
+          */}
         </nav>
       </header>
       <main>
@@ -248,7 +250,7 @@ function App() {
           </footer>
         </section>
       </main>
-      <div className="site-footer">UNCAUS · Simulación · TP N°2 Duran - Perez - Romero </div>
+      <div className="site-footer">UNCAUS · Simulación - TP N°2 - Duran - Perez - Romero </div>
     </>
   );
 }
