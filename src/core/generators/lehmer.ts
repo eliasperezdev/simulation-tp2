@@ -7,10 +7,9 @@ export function generarLehmer(x: number, y: number, n: number): ResultadoGenerad
   const N = String(semillaInicial).length
   const K = String(multiplicador).length
   const totalCifras = N + K
-  const divisor = 10 ** N + 1
 
   let actualX = semillaInicial
-  const secuencia = []
+  const xis: number[] = []
 
   for (let i = 1; i <= n; i += 1) {
     const producto = actualX * multiplicador
@@ -22,8 +21,11 @@ export function generarLehmer(x: number, y: number, n: number): ResultadoGenerad
     const xi = Math.abs(Number(ui) - Number(cifrasIzquierda))
     actualX = xi
 
-    secuencia.push({ i, xi, ri: xi / divisor })
+    xis.push(xi)
   }
+
+  const divisor = Math.max(...xis) + 1
+  const secuencia = xis.map((xi, idx) => ({ i: idx + 1, xi, ri: xi / divisor }))
 
   return { secuencia, divisor }
 }
